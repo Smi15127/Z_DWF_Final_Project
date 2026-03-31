@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Workout Regimens</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="program.js" defer></script>
 </head>
 <body>
     <header>
@@ -16,16 +18,12 @@
 
     <main>
         <h2>My Workout List</h2>
-        <ul>
-            <li>Leg Day <button>Edit</button> <button>Add to Calendar</button></li>
-            <li>Push/Pull Day <button>Edit</button> <button>Add to Calendar</button></li>
-            <li>Core & Cardio <button>Edit</button> <button>Add to Calendar</button></li>
-        </ul>
+        <ul id="workoutList"></ul>
 
         <h3>Add New Workout</h3>
-        <form>
-            <input type="text" placeholder="Workout Name" />
-            <textarea placeholder="Workout Details"></textarea>
+        <form id="workoutForm">
+            <input id="workoutName" type="text" placeholder="Workout Name" required />
+            <textarea id="workoutDetails" placeholder="Workout Details"></textarea>
             <button type="submit">Add Workout</button>
         </form>
     </main>

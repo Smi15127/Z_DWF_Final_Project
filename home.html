@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Exercise Goals Tracker - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="program.js" defer></script>
 </head>
 <body>
     <header>
@@ -28,11 +30,7 @@
         <!-- Summary of Completed Workouts -->
         <section>
             <h2>Recent Workouts</h2>
-            <ul>
-                <li>March 20: Leg Day - Completed ✅</li>
-                <li>March 19: Push/Pull - Completed ✅</li>
-                <li>March 18: Core & Cardio - Completed ✅</li>
-            </ul>
+            <ul id="recentList"></ul>
         </section>
 
         <!-- Quick Links -->
@@ -43,6 +41,16 @@
                 <li><a href="workout-regimens.html">View Workout Regimens</a></li>
                 <li><a href="index.html">Overview / Home</a></li>
             </ul>
+        </section>
+
+        <section>
+            <h2>Data Management</h2>
+
+            <button onclick="exportData()">Export Data</button>
+
+            <br><br>
+
+            <input type="file" id="importFile" accept=".json" onchange="importData(event)">
         </section>
     </main>
 </body>

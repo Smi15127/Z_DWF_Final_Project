@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <title>Progress Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="program.js" defer></script>
 </head>
 <body>
     <header>
@@ -27,19 +29,19 @@
                 <th>Sat</th>
             </tr>
             <tr>
-                <td></td><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td>
+                <td></td><td data-day="1">1</td><td data-day="2">2</td><td data-day="3">3</td><td data-day="4">4</td><td data-day="5">5</td><td data-day="6">6</td>
             </tr>
             <tr>
-                <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+                <td data-day="7">7</td><td data-day="8">8</td><td data-day="9">9</td><td data-day="10">10</td><td data-day="11">11</td><td data-day="12">12</td><td data-day="13">13</td>
             </tr>
             <tr>
-                <td>14</td><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td>
+                <td data-day="14">14</td><td data-day="15">15</td><td data-day="16">16</td><td data-day="17">17</td><td data-day="18">18</td><td data-day="19">19</td><td data-day="20">20</td>
             </tr>
             <tr>
-                <td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
+                <td data-day="21">21</td><td data-day="22">22</td><td data-day="23">23</td><td data-day="24">24</td><td data-day="25">25</td><td data-day="26">26</td><td data-day="27">27</td>
             </tr>
             <tr>
-                <td>28</td><td>29</td><td>30</td><td>31</td><td></td><td></td><td></td>
+                <td data-day="28">28</td><td data-day="29">29</td><td data-day="30">30</td><td data-day="31">31</td><td></td><td></td><td></td>
             </tr>
         </table>
 
@@ -49,6 +51,19 @@
             <textarea placeholder="Enter workouts or notes for this day"></textarea>
             <button type="submit">Save</button>
         </form>
+
+        <div id="modal">
+            <h3 id="selectedDay"></h3>
+
+            <select id="workoutSelect"></select><br><br>
+
+            <label>
+                <input type="checkbox" id="completedCheck"> Completed
+            </label><br><br>
+
+            <button id="saveDay">Save</button>
+            <button onclick="closeModal()">Close</button>
+        </div>
     </main>
 </body>
 </html>
