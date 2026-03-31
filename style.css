@@ -62,7 +62,6 @@ td, th {
     background-color: lightgreen;
 }
 
-/* Modal */
 #modal {
     display: none;
     position: fixed;

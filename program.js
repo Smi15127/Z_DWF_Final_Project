@@ -1,8 +1,8 @@
-// STORAGE KEYS
+// Keys
 const WORKOUTS_KEY = "workouts";
 const CALENDAR_KEY = "calendar";
 
-// LOAD DATA
+// Load data
 function getWorkouts() {
     return JSON.parse(localStorage.getItem(WORKOUTS_KEY)) || [];
 }
@@ -19,9 +19,7 @@ function saveCalendar(data) {
     localStorage.setItem(CALENDAR_KEY, JSON.stringify(data));
 }
 
-//////////////////////////////////////////////////
-// WORKOUT PAGE
-//////////////////////////////////////////////////
+// Workouts page
 function loadWorkouts() {
     const list = document.getElementById("workoutList");
     if (!list) return;
@@ -62,9 +60,7 @@ function deleteWorkout(index) {
     loadWorkouts();
 }
 
-//////////////////////////////////////////////////
-// CALENDAR PAGE
-//////////////////////////////////////////////////
+// Calendar page
 function setupCalendar() {
     const days = document.querySelectorAll("td[data-day]");
     if (!days.length) return;
@@ -129,9 +125,7 @@ function renderCalendar() {
     });
 }
 
-//////////////////////////////////////////////////
-// HOME PAGE
-//////////////////////////////////////////////////
+// Home page
 function loadRecentWorkouts() {
     const list = document.getElementById("recentList");
     if (!list) return;
@@ -148,9 +142,7 @@ function loadRecentWorkouts() {
     });
 }
 
-//////////////////////////////////////////////////
-// INIT
-//////////////////////////////////////////////////
+// Initialize
 document.addEventListener("DOMContentLoaded", () => {
     loadWorkouts();
     setupCalendar();
@@ -160,10 +152,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (form) form.addEventListener("submit", addWorkout);
 });
 
-//////////////////////////////////////////////////
-// IMPORT / EXPORT
-//////////////////////////////////////////////////
 
+// Import/export
 function exportData() {
     const data = {
         workouts: getWorkouts(),
@@ -199,7 +189,6 @@ function importData(event) {
 
                 alert("Data imported successfully!");
 
-                // Refresh page data
                 loadWorkouts();
                 setupCalendar();
                 loadRecentWorkouts();
